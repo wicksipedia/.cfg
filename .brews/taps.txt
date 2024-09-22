@@ -1,0 +1,3 @@
+azure/azd
+azure/functions
+isen-ng/dotnet-sdk-versions

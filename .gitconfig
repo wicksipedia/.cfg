@@ -1,0 +1,33 @@
+[user]
+	name = Matt Wicks
+	email = matt.wicks@gmail.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDc/u6qGFQSq6Uupx5P6GxU6JXGGSNVPcALy+ikFjtA7
+[includeIf "gitdir:~/Developer/ssw/"]
+    path = ~/.gitconfig.work
+[includeIf "gitdir:~/Developer/client/"]
+    path = ~/.gitconfig.work
+[push]
+	autoSetupRemote = true
+[http]
+	postBuffer = 157286400
+[init]
+	defaultBranch = main
+[core]
+	autocrlf = input
+[alias]
+	change-commits = "!f() { VAR=$1; OLD=$2; NEW=$3; shift 3; git filter-branch --env-filter \"if [[ \\\"$`echo $VAR`\\\" = '$OLD' ]]; then export $VAR='$NEW'; fi\" $@; }; f"
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
+[pull]
+	rebase = true
+[credential]
+	helper = 
+	helper = /usr/local/share/gcm-core/git-credential-manager
+[credential "https://dev.azure.com"]
+	useHttpPath = true
+[pager]
+	log = emojify
