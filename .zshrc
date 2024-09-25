@@ -28,10 +28,6 @@ antigen bundle Leizhenpeng/zsh-plugin-pnpm
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-syntax-highlighting
 
-# export NVM_AUTO_USE=true
-# export NVM_COMPLETION=true
-# antigen bundle lukechilds/zsh-nvm
-
 # fzf
 antigen bundle Aloxaf/fzf-tab
 antigen bundle Freed-Wu/fzf-tab-source@main
@@ -47,13 +43,10 @@ zstyle ':omz:plugins:eza' 'icons' yes
 
 antigen apply
 
-# init oh-my-posh
-if [ "$TERM_PROGRAM" != "Apple_Terminal" ]; then
-	eval "$(oh-my-posh init zsh --config $HOME/.ohmyposh/base.json)"
-fi
-
-# setup fnm
+# init tools
+eval "$(oh-my-posh init zsh --config $HOME/.ohmyposh/base.json)"
 eval "$(fnm env --use-on-cd --shell zsh --version-file-strategy=recursive --corepack-enabled)"
+eval "$(pyenv init --path)"
 
 # history setup
 HISTFILE=$HOME/.zhistory

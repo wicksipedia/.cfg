@@ -7,7 +7,7 @@
       "segments": [
         {
           "background": "#6f00ff",
-          "foreground": "#000000",
+          "foreground": "#ffffff",
           "type": "git",
           "style": "diamond",
           "leading_diamond": "\ue0c7",
