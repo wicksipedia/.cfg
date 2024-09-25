@@ -21,6 +21,7 @@ jq
 k6
 less
 oh-my-posh
+pyenv
 rectangle-pro
 speedtest-cli
 zoxide
